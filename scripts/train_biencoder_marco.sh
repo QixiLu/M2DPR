@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+deepspeed src/train_biencoder.py --deepspeed ds_config.json \
+    --model_name_or_path './pretrained_checkpoint' \
+    --fp16 \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 32 \
+    --t 0.02 \
+    --seed 42 \
+    --do_train \
+    --fp16 \
+    --train_file "./data/msmarco_bm25_official/train.jsonl" \
+    --q_max_len 32 \
+    --p_max_len 144 \
+    --train_n_passages 16 \
+    --dataloader_num_workers 1 \
+    --num_train_epochs 3 \
+    --learning_rate 2e-5 \
+    --use_scaled_loss True \
+    --warmup_steps 1000 \
+    --share_encoder True \
+    --logging_steps 50 \
+    --output_dir "./output_checkpoint/" \
+    --data_dir "./data/msmarco_bm25_official/" \
+    --save_total_limit 20 \
+    --save_strategy epoch \
+    --evaluation_strategy epoch \
+    --remove_unused_columns False \
+    --overwrite_output_dir \
+    --disable_tqdm False \
+    --report_to none "$@" \
+    --validation_file "./data/msmarco_bm25_official/dev.jsonl"

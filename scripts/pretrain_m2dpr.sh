@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+deepspeed src/train_m2dpr.py --deepspeed ds_config.json \
+    --tokenizer_name_or_path bert-base-uncased \
+    --per_device_train_batch_size 192 \
+    --per_device_eval_batch_size 192 \
+    --gradient_accumulation_steps 1 \
+    --seed 42 \
+    --do_train \
+    --fp16 \
+    --train_file 'data/msmarco_bm25_official/corpus_queries_tfidf_replace_0.jsonl,data/msmarco_bm25_official/corpus_queries_tfidf_replace_1.jsonl,data/msmarco_bm25_official/corpus_queries_tfidf_replace_2.jsonl,data/msmarco_bm25_official/corpus_queries_tfidf_replace_3.jsonl' \
+    --pretrain_max_length 144 \
+    --encoder_mask_prob 0.3 \
+    --decoder_mask_prob 0.5 \
+    --queries_mask_prob 0.5 \
+    --max_steps 120000 \
+    --all_use_mask_token True \
+    --dataloader_num_workers 1 \
+    --learning_rate 3e-4 \
+    --warmup_steps 4000 \
+    --weight_decay 0.01 \
+    --remove_unused_columns False \
+    --logging_steps 50 \
+    --report_to none \
+    --output_dir "./output" \
+    --save_total_limit 20 \
+    --save_strategy steps \
+    --save_steps 10000 \
+    --overwrite_output_dir \
+    --disable_tqdm False \
+    --contrastive_task False \
+    --reconstruction_inputs_task True \
+    --reconstruction_queries_task True \
+    --token_replace_task True \
+    --prediction_tf_idf_task True \
+    --encoder_mlm_task True

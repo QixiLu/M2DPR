@@ -1,0 +1,3 @@
+from .m2dpr_trainer import M2DPRPretrainTrainer
+from .biencoder_trainer import BiencoderTrainer
+from .reranker_trainer import RerankerTrainer
