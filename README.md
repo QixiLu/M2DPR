@@ -10,7 +10,7 @@ To encode passages, run `bash scripts/encode_marco.sh /path/to/checkpoint`;
 To do evaluation, run `bash scripts/search_marco.sh /path/to/checkpoint`.
 
 ## Available Models
-Pretrained M2DPR Encoder: https://drive.google.com/file/d/1bQS-r8Bbq5CllQfRL_XKtQVoQCoH9b-m/view?usp=sharing
+Pretrained M2DPR Encoder: https://drive.google.com/file/d/1bQS-r8Bbq5CllQfRL_XKtQVoQCoH9b-m/view?usp=sharing  
 Fine-Tuned M2DPR with distillation on MS-MARCO: https://drive.google.com/file/d/1P01FPZSnfKX941e26uYxdM8wEGMweSaq/view?usp=sharing
 
 ## Pretraining Task Data
