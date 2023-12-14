@@ -14,4 +14,5 @@ Pretrained M2DPR Encoder: https://drive.google.com/file/d/1bQS-r8Bbq5CllQfRL_XKt
 Fine-Tuned M2DPR with distillation on MS-MARCO: https://drive.google.com/file/d/1P01FPZSnfKX941e26uYxdM8wEGMweSaq/view?usp=sharing
 
 ## Training Data
-Data used during pretraining: https://12c830b6-d90c-4b17-9c65-314b0a802de9.s3.us-west-1.amazonaws.com/pretrain_data.tar
+Data used for pretraining: https://12c830b6-d90c-4b17-9c65-314b0a802de9.s3.us-west-1.amazonaws.com/pretrain_data.tar  
+Data used for fine-tuning: https://12c830b6-d90c-4b17-9c65-314b0a802de9.s3.us-west-1.amazonaws.com/msmarco_bm25_official.zip
